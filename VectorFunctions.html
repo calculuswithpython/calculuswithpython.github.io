@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-03-12T17:33:26-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vector Functions: Curves and Trajectories</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_soundwriting.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\doubler}[1]{2#1}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://www.youtube.com/channel/UCefWUvmsltrMPYeJ2ONqrbw" target="_blank"><img src="Calculo3/images/Logo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="vector_calculus.html"><span class="title">Vector Calculus with Python</span></a></h1>
+<p class="byline">Calculus with Python</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="frontmatter-1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="vector_calculus.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="velocities.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="frontmatter-1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="vector_calculus.html" title="Up">Up</a><a class="next-button button toolbar-item" href="velocities.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link active"><a href="VectorFunctions.html" data-scroll="VectorFunctions"><span class="codenumber">1</span> <span class="title">Vector Functions: Curves and Trajectories</span></a></li>
+<li class="link">
+<a href="velocities.html" data-scroll="velocities"><span class="codenumber">2</span> <span class="title">Derivatives and integrals of vector functions.</span></a><ul>
+<li><a href="velocities.html#subsection-1" data-scroll="subsection-1">Derivatives of vector functions.</a></li>
+<li><a href="velocities.html#subsection-2" data-scroll="subsection-2">Integrals of vector functions.</a></li>
+</ul>
+</li>
+<li class="link"><a href="ArcLength.html" data-scroll="ArcLength"><span class="codenumber">3</span> <span class="title">Arc lenght: Curve properties.</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="VectorFunctions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1</span> <span class="title">Vector Functions: Curves and Trajectories</span>
+</h2>
+<p id="p-4">Vector functions take real numbers and return vectors</p>
+<div class="displaymath">
+\begin{align*}
+\vec{r}:I\subset \amp\mathbb{R} \to \mathbb{R}^n\\
+\amp t \to \vec{r}(t) \subset \mathbb{R}^n
+\end{align*}
+</div>
+<p class="continuation">These vectors can be of any arbitrary dimension, but we are often interested in 3 dimensional vector functions:</p>
+<div class="displaymath">
+\begin{equation*}
+\vec{r}(t) = (f(t), g(t),h(t)) = f(t)\vec{i} + g(t)\vec{j} + h(t)\vec{k},
+\end{equation*}
+</div>
+<p class="continuation">In this expression<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a> \(f(t)\text{,}\) \(g(t)\) and \(h(t)\) are real functions, \(f,g,h:\mathbb{R}\subset I \to \mathbb{R}\text{,}\) called the <em class="emphasis">component functions</em> of \(\vec{r}(t)\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn">\(\vec{i}=(1,0,0)\text{,}\) \(\vec{j}=(0,1,0)\) and \(\vec{k}=(0,0,1)\) are the canonical vectors in \(\mathbb{R}^3\text{.}\)</div></div>
+<article class="remark remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
+</h6>Vector functions are used to represent trajectories in space or curves.</article><article class="example example-like" id="example-1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-5">The vector function \(\vec{r}(t)=(5t+1,\ln(t^3),\sqrt{3-t})\) has three component functions:</p>
+<div class="displaymath">
+\begin{align*}
+\amp f(t)=5t+1,\\
+\amp g(t)=\ln(t^3),\\
+\amp h(t)=\sqrt{3-t}.
+\end{align*}
+</div>
+<p class="continuation">The domain of \(\vec{r}\text{,}\) if not explicitly given, is the largest set in which <em class="emphasis">all</em> the component functions are defined, in this example it is \([0,3)\text{.}\)</p></article></div>
+<article class="remark remark-like" id="remark-2"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span>
+</h6>All the component funcions of \(\vec{r}(t)\) have to be defined for every point of its domain \(D\text{.}\) <em class="emphasis">The domain, or part of it, may have be given explicitly when coding (when plotting, for example).</em></article><p id="p-6">Some of the most important concepts in Vector Calculus use the concept of <em class="emphasis">limit</em>, which we define componentwise<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a>:</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn">It is possible to define this limit in terms of \(\varepsilon\) and \(\delta\text{,}\) but both definitions can be proven equivalent.</div></div>
+<article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
+</h6>
+<p id="p-7">For a vector function \(\vec{r}:I\to \mathbb{R}^3\text{,}\)  \(\vec{r}(t)=(f(t),g(t),h(t))\text{,}\) we define the <em class="emphasis">limit</em> of \(\vec{r}(t)\) when \(t \) tends to \(a \in \overline{I}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 3 </sup></a> as:</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{t \to a} \vec{r}(t) = \left(\lim_{t \to a} f(t), \lim_{t \to a} g(t), \lim_{t \to a} h(t) \right),
+\end{equation*}
+</div>
+<p class="continuation">if the real functions have limits at \(a\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn">The limit could, in principle, be calculated in points of the boundary do the domain of \(\vec{r}\text{,}\) which is denoted by \(\overline{I}\text{.}\)</div></div></article><article class="example example-like" id="example-2"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-8">If \(\vec{r}(t)=(1+t^3)\vec{i} + te^{-t}\vec{j}+\frac{\sin(t)}{t}\vec{k}\) then</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{t \to 0} \vec{r}(t) =\amp \lim_{t \to 0}(1+t^3)\vec{i} + \lim_{t \to 0}te^{-t}\vec{j}+\lim_{t \to 0}\frac{\sin(t)}{t}\vec{k}\\
+=\amp \vec{i} +\vec{k}.
+\end{align*}
+</div></article></div>
+<article class="remark remark-like" id="remark-3"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6</span><span class="period">.</span>
+</h6>Instead of defining everything from scratch for vector functions, we prefer to build upon the knowledge of single variable calculus. This might be an adequate viewpoint for who is interested in applications.</article><article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7</span><span class="period">.</span>
+</h6>
+<p id="p-9">The vector function \(\vec{r}:I\to \mathbb{R}^3\text{,}\) is <em class="emphasis">continuous</em> at \(a \in I\) if, and only if:</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{t \to a} \vec{r}(t) = \vec{r}(a).
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="Teorema_Funcao_Cont"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span>
+</h6>
+<p id="p-10">The vector function \(\vec{r}:I\to \mathbb{R}^3\text{,}\)  \(\vec{r}(t)=(f(t),g(t),h(t))\text{,}\) is continuous at \(a \in I\) if, and only if, \(f(t)\text{,}\) \(g(t)\) e \(h(t)\) are continuous at \(a\text{.}\)</p></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-11">(\(\Longrightarrow\)) If \(\vec{r}\) is continuous at \(a\text{,}\) we have that</p>
+<div class="displaymath">
+\begin{align*}
+\left(\lim_{t \to a} f(t), \lim_{t \to a} g(t), \lim_{t \to a} h(t) \right) =\amp \lim_{t \to a} \vec{r}(t) = \vec{r}(a)\\
+=\amp \left(f(a), g(a), h(a) \right) 
+\end{align*}
+</div>
+<p class="continuation">and \(f(t)\text{,}\) \(g(t)\) and \(h(t)\) are continuous at \(a\text{.}\)</p>
+<p id="p-12">(\(\Longleftarrow\)) If \(f(t)\text{,}\) \(g(t)\) and \(h(t)\) are continuous at \(a\text{,}\) we have that</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{t \to a} \vec{r}(t) =\amp  \left(\lim_{t \to a} f(t), \lim_{t \to a} g(t), \lim_{t \to a} h(t) \right)\\
+=\amp \left(f(a), g(a), h(a) \right)  = \vec{r}(a)
+\end{align*}
+</div>
+<p class="continuation">and \(\vec{r}(t)\) is continuous at \(a\text{.}\)</p></article></div>
+<article class="remark remark-like" id="remark-4"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
+</h6>We will focus on continuous vector functions to represent curves and trajectories. We do this to avoid calling a bunch of erratic points a curve or a trajectory.</article><p id="p-13">Let \(I \subset \mathbb{R}\) be an interval. If \(\vec{r}:I \to \mathbb{R}^n\) (usually with \(n= 2\) or \(3\)) is continuous for all \(t \in I\) and is not constant, then the set</p>
+<div class="displaymath">
+\begin{equation*}
+C = \{(x,y,z) \in \mathbb{R}^3 | (x,y,z) = r(t), \mbox{ for some } t \in I\}
+\end{equation*}
+</div>
+<p class="continuation">is called a <em class="emphasis">space curve.</em></p>
+<p id="p-14">\(r(t) = (f(t),g(t), h(t))\) is a <em class="emphasis">parametrization</em> of \(C\text{;}\) \(t\) is the parameter and \(x=f(t)\text{,}\) \(y=g(t)\) e \(z=h(t)\) are the parametric equations of \(C\text{.}\)</p>
+<p id="p-15">Python code for plotting a plane curve given by a vector function \(\vec{r}:I \to \mathbb{R}^2\text{.}\)</p>
+<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter
+t = np.linspace(0,6.28,100)
+
+# Dataset
+x = 5*np.sin(t)
+y = np.cos(t)
+ 
+# Plotting the Graph
+plt.plot(x, y)
+plt.title("An ellipse")
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.gca().set_aspect(1) #sets the x and y to be in the same scale
+plt.show()
+#plt.savefig('ellipse.png', dpi=80) #download a plot of a given size
+</script></div>
+<article class="exercise exercise-like" id="exercise-1"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-1"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like">Find the (max) domain of \(\vec{r}(t)=(\sqrt{16-t}, \sqrt{t-2})\text{.}\) Is this vector function continuous? If it is, use the code above to plot the curve parametrized by \(\vec{r}(t)\text{.}\)<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">\(x(t) = \sqrt{16-t}\) is defined (in the reals) for \(t \leq 16\text{.}\) \(y(t) = \sqrt{t-2}\) is defined (in the reals) for \(t \geq 2\text{.}\) So the domain is \([2,16]\text{.}\)</div></div>
+</div></article></div>
+<p id="p-16">Python code to crate an animation of a point moving accordingly to some vector function \(\vec{r}:[a,b] \to \mathbb{R}^2\text{.}\)</p>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+#defines the size of the image (inches)
+plt.rcParams["figure.figsize"] = 4,3
+from matplotlib.animation import FuncAnimation
+
+# vector function2
+def vector_function(t):
+    return np.array([np.cos(2*t), np.sin(t)])
+
+# create a figure with an axes
+fig, ax = plt.subplots()
+# set the axes limits
+ax.axis([-1.4,1.4,-1.4,1.4])
+# set same scale to x and y axes
+ax.set_aspect(1)
+# create a point in the axes
+point, = ax.plot(0,1, marker="o")
+
+# Updating function, to be repeatedly called by the animation
+def update(t):
+    # obtain point coordinates 
+    x,y = vector_function(t)
+    # set point's coordinates
+    point.set_data([x],[y])
+    return point,
+
+# vector function domain I = [a,b]
+a = 0
+b= 2*np.pi
+
+# number of points the intervall is divided
+n=360
+
+# create animation with 10ms interval, which is repeated,
+ani = FuncAnimation(fig, update, interval=10, blit=True, repeat=True,
+                    frames=np.linspace(a,b,n, endpoint=False))
+
+ani.save('ani.mp4')
+</script></div>
+<article class="exercise exercise-like" id="exercise-2"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-2"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-2"><article class="exercise exercise-like">Let \(P=(-1,0)\) and \(Q=(0,1)\text{.}\) Use the code above to animate a point moving accordingly to these functions and describe the differences in their movement: <ol class="lower-alpha">
+<li id="li-1"><p id="p-derived-li-1">\(\vec{r}(t) = P + (Q-P)t\text{,}\) with \(t \in [0,4]\text{.}\)</p></li>
+<li id="li-2"><p id="p-derived-li-2">\(\vec{r}(t) = P + (Q-P)t^2\text{,}\) with \(t \in [0,2]\text{.}\)</p></li>
+<li id="li-3"><p id="p-derived-li-3">\(\vec{r}(t) = P + (Q-P)4\sin(t)\text{,}\) with \(t \in [0,\pi/2]\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">It is necessary to change the domain \([a,b]\) in the code, the axis limits from \([-1.4,1.4,-1.4,1.4] \) (\([x_0,x_1,y_0,y_1] \) ) to \([-1.4,3.4,-0.4,4.4] \text{.}\) It might be good to also change the number of points n (i took 1000). All the vector functions parametrize the same line segment (from (-1,0) to (3,4)), but with different speeds.</div></div>
+</div></article></div>
+<article class="remark remark-like" id="remark-5"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
+</h6>Each parametrized curve has infinitely many parametrizations, which correspond to the different velocities it can be traveled over.</article><p id="p-17">Python code for plotting a space curve given by a vector function \(\vec{r}:I \to \mathbb{R}^3\text{.}\)</p>
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter
+t = np.linspace(0,15,100)
+
+# Dataset
+x = 2*np.sin(t)
+y = np.cos(t)
+z = t
+ 
+# Plotting the Graph
+ax = plt.figure().add_subplot(projection='3d')
+ax.plot(x, y, z, label='parametric curve')
+ax.legend()
+plt.show()
+#plt.savefig('parametric.png', dpi=80) #download a plot of a given size
+</script></div>
+<article class="exercise exercise-like" id="exercise-3"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-3"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-3"><article class="exercise exercise-like">Change the code above to plot the space curves given by the functions below: <ol class="lower-alpha">
+<li id="li-4"><p id="p-derived-li-4">\(\vec{r}(t) = (\sin (t), \cos (t), \cos (t))\text{,}\) with \(t \in [0,2\pi]\text{.}\)</p></li>
+<li id="li-5"><p id="p-derived-li-5">\(\vec{r}(t) = (\sin (t^3), \cos (t^3), \cos (t^3))\text{,}\) with \(t \in [0,1.845]\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<ol class="lower-alpha">
+<li id="li-6"><p id="p-derived-li-6">Change # Parameter t = np.linspace(0,6.283,100), # Dataset x = np.sin(t); y = np.cos(t); z = np.cos(t)</p></li>
+<li id="li-7"><p id="p-derived-li-7">Change # Parameter t = np.linspace(0,1.845,100), # Dataset x = np.sin(t^3); y = np.cos(t^3); z = np.cos(t^3)</p></li>
+</ol> In both cases we obtain the same curve: <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="Calculo3/images/ex_1_12_a.png" class="contained" alt=""></div>
+</div></div>
+</div></article></div>
+<article class="remark remark-like" id="remark-6"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14</span><span class="period">.</span>
+</h6>If \(\vec{r}:[a,b] \to \mathbb{R}^n\) is a parametrization of a space curve, we can replace the variable \(t\) by an expression \(f(t)\text{,}\) for some function \(f:[c,d]\to[a,b]\text{,}\) with \(f([c,d])=[a,b]\text{,}\) to obtain another parametrization \(\vec{r_p}:[c,d] \to \mathbb{R}^n\) of the same curve (but with different velocities).</article><article class="exercise exercise-like" id="exercise-4"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-4"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-4"><article class="exercise exercise-like">Find three different parametrizations for the curve \(\vec{r}(t) = (\sin (t), \cos (t), t^2/4)\text{,}\) with \(t \in [0,2\pi]\text{.}\) Test if your vector functions produce the same plot with the codes above (they should).<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">We could choose any parametrization we want, for example:  \(\vec{r}(t) = (\sin (2t), \cos (2t), (2t)^2/4)\text{,}\) with \(t \in [0,\pi]\) or  \(\vec{r}(t) = (\sin (\sqrt{t}), \cos (\sqrt{t}), t/4)\text{,}\) with \(t \in [0,4\pi^2]\) or  \(\vec{r}(t) = (\sin (4t), \cos (4t), (4t)^2/4)\text{,}\) with \(t \in [0,\pi/2]\text{.}\) So we obtain: <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="Calculo3/images/ex_1_15.png" class="contained" alt=""></div>
+</div></div>
+</div></article></div></section></div></main>
+</div>
+</body>
+</html>
