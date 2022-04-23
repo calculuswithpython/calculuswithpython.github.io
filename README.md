@@ -1,4 +1,4 @@
-### Hi there 👋
+### This repository contains the book I'm developing for developing a computer (Python) friendly approach to Calculus. 👋
 
 <!--
 **calculuswithpython/CalculusWithPython** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
