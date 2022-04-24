@@ -1,4 +1,4 @@
-### This repository hosts the project of developing Calculus content with computer (Python) friendly approach and integrated to other media, like youtube. 👋
+### This repository hosts the project of developing Calculus content with a computer (Python) friendly approach and integrated to other media, like youtube. My purpose is to introduce the content through shorter videos and to encourage the exploration of the concepts of calculus with Python. 👋
 
 <!--
 **calculuswithpython/CalculusWithPython** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
