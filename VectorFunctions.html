@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-24T12:09:15-03:00       *-->
+<!--*       on 2022-04-24T15:13:16-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -106,6 +106,7 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="VectorFunctions"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1</span> <span class="title">Vector Functions: Curves and Trajectories</span>
 </h2>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/-Dtcsrz0MS4?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <p id="p-4">Vector functions take real numbers and return vectors</p>
 <div class="displaymath">
 \begin{align*}
@@ -219,7 +220,8 @@ plt.show()
 <article class="exercise exercise-like" id="exercise-1"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-1"><h6 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.10</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like">Find the (max) domain of \(\vec{r}(t)=(\sqrt{16-t}, \sqrt{t-2})\text{.}\) Is this vector function continuous? If it is, use the code above to plot the curve parametrized by \(\vec{r}(t)\text{.}\)<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">\(x(t) = \sqrt{16-t}\) is defined (in the reals) for \(t \leq 16\text{.}\) \(y(t) = \sqrt{t-2}\) is defined (in the reals) for \(t \geq 2\text{.}\) So the domain is \([2,16]\text{.}\)</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">\(x(t) = \sqrt{16-t}\) is defined (in the reals) for \(t \leq 16\text{.}\) \(y(t) = \sqrt{t-2}\) is defined (in the reals) for \(t \geq 2\text{.}\) So the domain is \([2,16]\text{.}\) <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LXuf4OfKj3U?&amp;modestbranding=1&amp;rel=0&amp;start=0&amp;end=64"></iframe></div>
+</div></div>
 </div></article></div>
 <p id="p-16">Python code to crate an animation of a point moving accordingly to some vector function \(\vec{r}:[a,b] \to \mathbb{R}^2\text{.}\)</p>
 <div class="sagecell-sage" id="sage-2"><script type="text/x-sage">import numpy as np
@@ -270,11 +272,12 @@ ani.save('ani.mp4')
 <li id="li-3"><p id="p-derived-li-3">\(\vec{r}(t) = P + (Q-P)4\sin(t)\text{,}\) with \(t \in [0,\pi/2]\text{.}\)</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">It is necessary to change the domain \([a,b]\) in the code, the axis limits from \([-1.4,1.4,-1.4,1.4] \) (\([x_0,x_1,y_0,y_1] \) ) to \([-1.4,3.4,-0.4,4.4] \text{.}\) It might be good to also change the number of points n (i took 1000). All the vector functions parametrize the same line segment (from (-1,0) to (3,4)), but with different speeds.</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">It is necessary to change the domain \([a,b]\) in the code, the axis limits from \([-1.4,1.4,-1.4,1.4] \) (\([x_0,x_1,y_0,y_1] \) ) to \([-1.4,3.4,-0.4,4.4] \text{.}\) It might be good to also change the number of points n (i took 1000). All the vector functions parametrize the same line segment (from (-1,0) to (3,4)), but with different speeds. <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LXuf4OfKj3U?&amp;modestbranding=1&amp;rel=0&amp;start=65&amp;end=180"></iframe></div>
+</div></div>
 </div></article></div>
 <article class="remark remark-like" id="remark-5"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
-</h6>Each parametrized curve has infinitely many parametrizations, which correspond to the different velocities it can be traveled over.</article><p id="p-17">Python code for plotting a space curve given by a vector function \(\vec{r}:I \to \mathbb{R}^3\text{.}\)</p>
+</h6>Each parametrized curve has infinitely many parametrizations, which correspond to the different velocities it can be traveled over.</article><p id="p-17">Python code for plotting a space curve given by a vector function \(\vec{r}:I \to \mathbb{R}^3\text{,}\) \(\vec{r}(t)=(x(t),y(t),z(t))\text{.}\)</p>
 <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">import numpy as np
 import matplotlib.pyplot as plt
 
@@ -305,6 +308,7 @@ plt.show()
 <li id="li-6"><p id="p-derived-li-6">Change # Parameter t = np.linspace(0,6.283,100), # Dataset x = np.sin(t); y = np.cos(t); z = np.cos(t)</p></li>
 <li id="li-7"><p id="p-derived-li-7">Change # Parameter t = np.linspace(0,1.845,100), # Dataset x = np.sin(t^3); y = np.cos(t^3); z = np.cos(t^3)</p></li>
 </ol> In both cases we obtain the same curve: <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="Calculo3/images/ex_1_12_a.png" class="contained" alt=""></div>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LXuf4OfKj3U?&amp;modestbranding=1&amp;rel=0&amp;start=180&amp;end=228"></iframe></div>
 </div></div>
 </div></article></div>
 <article class="remark remark-like" id="remark-6"><h6 class="heading">
@@ -313,6 +317,7 @@ plt.show()
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.15</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-4"><article class="exercise exercise-like">Find three different parametrizations for the curve \(\vec{r}(t) = (\sin (t), \cos (t), t^2/4)\text{,}\) with \(t \in [0,2\pi]\text{.}\) Test if your vector functions produce the same plot with the codes above (they should).<div class="solutions">
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">We could choose any parametrization we want, for example:  \(\vec{r}(t) = (\sin (2t), \cos (2t), (2t)^2/4)\text{,}\) with \(t \in [0,\pi]\) or  \(\vec{r}(t) = (\sin (\sqrt{t}), \cos (\sqrt{t}), t/4)\text{,}\) with \(t \in [0,4\pi^2]\) or  \(\vec{r}(t) = (\sin (4t), \cos (4t), (4t)^2/4)\text{,}\) with \(t \in [0,\pi/2]\text{.}\) So we obtain: <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="Calculo3/images/ex_1_15.png" class="contained" alt=""></div>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-5" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/LXuf4OfKj3U?&amp;modestbranding=1&amp;rel=0&amp;start=229"></iframe></div>
 </div></div>
 </div></article></div></section></div></main>
 </div>

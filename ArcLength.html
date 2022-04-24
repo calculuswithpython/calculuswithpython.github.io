@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-24T12:09:15-03:00       *-->
+<!--*       on 2022-04-24T15:13:16-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -106,6 +106,7 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="ArcLength"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3</span> <span class="title">Arc lenght: Curve properties.</span>
 </h2>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-10" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/a675cgR7kXE?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <p id="p-54">One of the most fundamental characteristics of a curve is its length. As curves defined by vector functions are being introduced now in this material, we need to <em class="emphasis">define</em> the length of such a curve means, and to do that in a way that is compatible with the lengths of polygonal lines (which we know from euclidean geometry). We do this by approximating the length of the curve by polygonal lines and taking the limit of the lengths of these polygonal lines.</p>
 <p id="p-55">Recall that the length of the segment joining the points \(P=(P_x, P_y, P_z)\) and \(Q=(Q_x, Q_y, Q_z)\) can be calculated by</p>
 <div class="displaymath">
@@ -214,7 +215,8 @@ L = \int_a^b\|\vec{r}'(t)\|dt = \int_a^b\sqrt{(x'(t))^2+(y'(t))^2+(z'(t))^2}dt.
 \begin{equation*}
 L = \int_b^a \sqrt{1 +(f'(t))^2} dt,
 \end{equation*}
-</div>which agrees with length calculated in single variable calculus.</div></div></article></div>
+</div>which agrees with length calculated in single variable calculus. <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-11" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Goitea32V6s?&amp;modestbranding=1&amp;rel=0&amp;start=0&amp;end=49"></iframe></div>
+</div></div></article></div>
 <p id="p-63">The following code calculates the length of the curve numerically (using scipy) \(C\subset \mathbb{R}^3\) parametrized by \(r(t)\text{,}\) with \(t \in [a,b]\text{.}\)</p>
 <div class="sagecell-sage" id="sage-11"><script type="text/x-sage">import numpy as np
 from scipy import integrate
@@ -245,7 +247,8 @@ print('L~',L[0])
 <li id="li-23"><p id="p-derived-li-23">\(\vec{r}(t) = (\cos(t), \sin(t), 3\sin(t)), \,\,\, t \in [0,4\pi] \text{;}\)</p></li>
 <li id="li-24"><p id="p-derived-li-24">\(\vec{r}(t) = (t^2, t^3), \,\,\, t \in [-2,2] \text{;}\)</p></li>
 </ol>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
+<ol class="lower-alpha">
 <li id="li-25"><p id="p-derived-li-25">\(\vec{r}'(t) = (1, \sinh(t))\text{,}\) \(\|\vec{r}'\|= \sqrt{1 + \sinh^2(t)} = \sqrt{\cosh^2(t)}= |\cosh(t)| = \cosh(t)\) and<div class="displaymath">
 \begin{equation*}
 L = \int_{-1}^1 \cosh(t) dt = \sinh(t)|_{-1}^1 = \sinh(1) - \sinh(-1) = 2\sinh(1) \approx 2.35
@@ -263,11 +266,14 @@ L =\amp \int_{-2}^2 \|\vec{r}'\| dt = \int_{-2}^0 -t\sqrt{4+9t^2} dt + \int_{0}^
 \amp = \frac{-1}{18}\int_{40}^4 \sqrt{u} dt + \frac{1}{18}\int_{4}^{40} \sqrt{u} dt = \frac{-1}{27} u^{3/2}|_{40}^4 + \frac{1}{27} u^{3/2}|_{4}^{40} \approx 9.07
 \end{align*}
 </div></p></li>
-</ol></div></div></article></div>
+</ol>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-12" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Goitea32V6s?&amp;modestbranding=1&amp;rel=0&amp;start=49&amp;end=268"></iframe></div>
+</div></div></article></div>
 <article class="exercise exercise-like" id="exercise-10"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-10"><h6 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.7</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-10"><article class="exercise exercise-like"><p id="p-65">Change the parameter in the vector of functions of the last exercise by doing \(t=s^3\) and changing the domains to \([\sqrt[3]{a},\sqrt[3]{b}]\text{.}\) Then verify, with the code, that the lengths obtained by using the new parametrizations \(\vec{l}(s)=\vec{r}(s^3)\) are the same as the ones obtained before.</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">Replace the appropriate functions in the code (see video solution).</div></div></article></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">Replace the appropriate functions in the code (see video solution). <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-13" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Goitea32V6s?&amp;modestbranding=1&amp;rel=0&amp;start=270&amp;end=478"></iframe></div>
+</div></div></article></div>
 <p id="p-66">If we have a trajectory given by some smooth vector function \(\vec{r}(t)\text{,}\) we might be interested into calculating the distance traveled from a starting time \(t_0\) (often 0) until time \(t\text{.}\) Letting \(t\) vary, we obtain the <em class="alert">arc length function</em>:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -472,7 +478,8 @@ ani_trj.save('ani2.mp4') #the whole curve
 <li id="li-29"><p id="p-derived-li-29">\(\vec{r}(t) = (\cos(2t), sin(t), 3t),  \,\,\,\,\, t \in [0,10]\text{;}\)</p></li>
 <li id="li-30"><p id="p-derived-li-30">\(\displaystyle \vec{r}(t) = (t, t^2, t^3/3),  \,\,\,\,\, t \in [0,3]\)</p></li>
 </ol>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">Replace the appropriate functions in the code (see video solution).</div></div></article></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">Replace the appropriate functions in the code (see video solution). <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-14" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Goitea32V6s?&amp;modestbranding=1&amp;rel=0&amp;start=480&amp;end=632"></iframe></div>
+</div></div></article></div>
 <p id="p-72">A notion of how much a curve \(C\) defined by some smooth vector function \(r:[a,b] \to \mathbb{R}^3\)is bending is important, then  it can indicate points of higher deformation and how tight a curve is in a road. Such a notion is called curvature in math and it is defined as second derivative of the arc length parametrization of \(C\text{:}\) \(||\vec{r}_0''(s)||\text{.}\) We use the arc length parametrization<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 4 </sup></a> because the second derivative corresponds to the acceleration. The expression \(k=||\vec{r}_0''(s)||\) is prone to numerical error, and the formula</p>
 <div class="displaymath">
 \begin{equation*}
@@ -552,6 +559,7 @@ plt.show()
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_2.png" class="contained" alt=""></div> We find points two different types of local maxima: the lower ones at  \(0, \pi, 2\pi, 3\pi\text{,}\) that correspond to the bends "in the middle" of the plot, and higher ones at \(\pi/2, 3\pi/2, 5\pi/2, 7\pi/2\text{,}\) that correspond to the bends "in the corners" of the plot. The minima show the flatter parts, in between consecutive local maxima: <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_2_plot.png" class="contained" alt=""></div>
 <p id="p-76">c)</p>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_3.png" class="contained" alt=""></div> We find a point of maxima at \(0\text{,}\) with curvature 2, and the curvature seems to tend to 0 as \(t\) increases: <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_3_plot.png" class="contained" alt=""></div>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-15" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Goitea32V6s?&amp;modestbranding=1&amp;rel=0&amp;start=632"></iframe></div>
 </div></div></article></div></section></div></main>
 </div>
 </body>
