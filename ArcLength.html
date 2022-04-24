@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-04-24T12:05:03-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Arc lenght: Curve properties.</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_soundwriting.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\doubler}[1]{2#1}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://www.youtube.com/channel/UCefWUvmsltrMPYeJ2ONqrbw" target="_blank"><img src="Logo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="vector_calculus.html"><span class="title">Vector Calculus with Python</span></a></h1>
+<p class="byline">Calculus with Python</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="velocities.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="vector_calculus.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="velocities.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="vector_calculus.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="VectorFunctions.html" data-scroll="VectorFunctions"><span class="codenumber">1</span> <span class="title">Vector Functions: Curves and Trajectories</span></a></li>
+<li class="link">
+<a href="velocities.html" data-scroll="velocities"><span class="codenumber">2</span> <span class="title">Derivatives and integrals of vector functions.</span></a><ul>
+<li><a href="velocities.html#subsection-1" data-scroll="subsection-1">Derivatives of vector functions.</a></li>
+<li><a href="velocities.html#subsection-2" data-scroll="subsection-2">Integrals of vector functions.</a></li>
+</ul>
+</li>
+<li class="link active"><a href="ArcLength.html" data-scroll="ArcLength"><span class="codenumber">3</span> <span class="title">Arc lenght: Curve properties.</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="ArcLength"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3</span> <span class="title">Arc lenght: Curve properties.</span>
+</h2>
+<p id="p-54">One of the most fundamental characteristics of a curve is its length. As curves defined by vector functions are being introduced now in this material, we need to <em class="emphasis">define</em> the length of such a curve means, and to do that in a way that is compatible with the lengths of polygonal lines (which we know from euclidean geometry). We do this by approximating the length of the curve by polygonal lines and taking the limit of the lengths of these polygonal lines.</p>
+<p id="p-55">Recall that the length of the segment joining the points \(P=(P_x, P_y, P_z)\) and \(Q=(Q_x, Q_y, Q_z)\) can be calculated by</p>
+<div class="displaymath">
+\begin{equation*}
+\|Q-P\|=\sqrt{(Q_x-P_x)^2+(Q_y-P_y)^2+(Q_z-P_z)^2}.
+\end{equation*}
+</div>
+<p id="p-56">Consider (formally) a curve defined by a vector function \(\vec{r}:[a,b] \to \mathbb{R}^n\) (we are mostly concerned with \(n=2\) ou \(3\)). Then let us partitionate the interval \([a,b]\) into \(n\) parts of equal length  \(P=\{a, a+\Delta t, a+2\Delta t, \cdots, a+n\Delta t=b\}\text{,}\) with \(\Delta t = (b-a)/n\text{,}\) and approximate the length of the curve by the polygonal joining consecutive points of the curve defined by the partition \(\vec{r}(a+i\Delta t)\text{.}\)</p>
+<div class="sagecell-sage" id="sage-10"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+
+# Domain of the vector function
+
+a = 0
+b = 10
+
+# Parameter
+t = np.linspace(a,b,100)
+
+# Vector function
+r= lambda u:np.array([u,2*u,np.sin(u/2)])
+
+# Number of points in the partition
+
+n=6
+
+# Points in the partition
+
+pointsx = [r(a)[0]]
+pointsy = [r(a)[1]]
+pointsz = [r(a)[2]]
+
+for i in range(n):
+	pointsx.append(r(a+(i+1)*(b-a)/n)[0])
+	pointsy.append(r(a+(i+1)*(b-a)/n)[1])
+	pointsz.append(r(a+(i+1)*(b-a)/n)[2])
+
+ 
+# Plotting the Graphs
+ax = plt.figure().add_subplot(projection='3d')
+ax.plot(r(t)[0],r(t)[1],r(t)[2], label='parametric curve')
+ax.plot(pointsx,pointsy,pointsz, label='polygonal approximation')
+ax.legend()
+plt.show()
+#plt.savefig('parametric.png', dpi=80) #download a plot of a given size
+</script></div>
+<p id="p-57">Please note (and try the code) that the polygonal line gets indistinguishable from the curve as we increase the number of points in the partition. The length of the curve can be approximated by the sums of the lengths of the line segments in the polygonal line:</p>
+<div class="displaymath">
+\begin{align*}
+L \approx \amp\sum_{i=0}^{n-1} \|\vec{r}(a+(i+1)\Delta t) - \vec{r}(a+i\Delta t)\| \\
+\approx\amp \sum_{i=0}^{n-1} \left\|\frac{\vec{r}(a+(i+1)\Delta t) - \vec{r}(a+i\Delta t)}{\Delta t}\right\|\Delta t.
+\end{align*}
+</div>
+<p class="continuation">Numerical calculations for lengths are often done by such sums with fine partitions.</p>
+<p id="p-58">This motivates us to <em class="emphasis">define the length</em> as</p>
+<div class="displaymath">
+\begin{equation*}
+L =\lim_{n\to \infty} \sum_{i=0}^{n-1} \left\|\frac{\vec{r}(a+(i+1)\Delta t) - \vec{r}(a+i\Delta t)}{\Delta t}\right\|\Delta t = \int_a^b\|\vec{r}'(t)\|dt.
+\end{equation*}
+</div>
+<article class="definition definition-like" id="definition-5"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span>
+</h6>
+<p id="p-59">If \(\vec{r}: I \to \mathbb{R}^n\) is a smooth parametrization (piecewise<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 1 </sup></a>) of a curve that does not cover arcs of the curve more than once, then we define its <em class="emphasis">length</em> as</p>
+<div class="displaymath">
+\begin{equation*}
+L = \int_a^b\|\vec{r}'(t)\|dt,
+\end{equation*}
+</div>
+<p class="continuation">if the limit exists.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn">This means that there is, at most, a finite number of points, where the function is not differentiable.</div></div></article><article class="remark remark-like" id="remark-11"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
+</h6>It is possible to show that the length defined like this does not depend on the chosen parametrization (although the formula explicitly shows a parametrization), if the parametrization only passes through each section of curve once. This is important, then the notion of length cannot depend on the vector function that describes the curve. The following theorem shows this.</article><article class="theorem theorem-like" id="LenghtParamIndepen"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3</span><span class="period">.</span>
+</h6>
+<p id="p-60">Let  \(\vec{r}:[a,b]\to \mathbb{R}^n\) and \(\vec{q}:[c,d]\to \mathbb{R}^n\) be smooth parametrizations to a curve \(C \text{,}\) that are one-to-one correspondences. Then calculating the length of \(C\) using \(r\) or \(q\) yields the same result, i. e.</p>
+<div class="displaymath">
+\begin{equation*}
+\int_a^b\|\vec{r}'(t)\|dt = \int_c^d\|\vec{q}'(s)\|ds.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-61">If \(\vec{r}\) and \(\vec{q}\) are in one to one correspondence with \(C\text{,}\) we can change from the parameter \(t\) to the parameter \(s\) through \(s=(\vec{q}^{-1} \circ \vec{r})(t)\text{.}\) Let us assume that both parametrizations run through the curve in the same direction, so that \((\vec{q}^{-1} \circ \vec{r})(a)=c\) and \((\vec{q}^{-1} \circ \vec{r})(b)=d\text{.}\) <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 2 </sup></a> As the functions are smooth, \((\vec{q}^{-1} \circ \vec{r})'(t)\) exists and as the parametrizations run the curve in the same direction \((\vec{q}^{-1} \circ \vec{r})'(t)\geq 0\) for all \(t\text{.}\) Then we can change variables in the following integral and calculate:</p>
+<div class="displaymath">
+\begin{align*}
+\int_c^d\|\vec{q}'(s)\|ds =\amp \int_a^c\|\vec{q}'((\vec{q}^{-1} \circ \vec{r})(t))\|(\vec{q}^{-1} \circ \vec{r})'(t)dt\\
+=\amp \int_a^c\|(\vec{q}^{-1} \circ \vec{r})'(t)\vec{q}'((\vec{q}^{-1} \circ \vec{r})(t))\|dt \\
+=\amp \int_a^b \|(\vec{q}\circ \vec{q}^{-1} \circ \vec{r})'(t)\|dt = \int_a^b \|\vec{r}'(t)\|dt,
+\end{align*}
+</div>
+<p class="continuation">where we used the chain rule from the second to the third line. Thus the same length is obtained using either of the parametrizations.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn">If that is not the case, the proof is also possible, but with extra care to the signs and limits of the integrals.</div></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/ParameterChange.png" class="contained" alt=""></div></article></div>
+<article class="remark remark-like" id="remark-12"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4</span><span class="period">.</span>
+</h6>If \(\vec{r}(t)=(x(t),y(t))\) is a smooth parametrization that does not cover multiple times any arc of a curve \(C \subset \mathbb{R}^2\text{,}\) then:<div class="displaymath">
+\begin{equation*}
+L = \int_a^b\|\vec{r}'(t)\|dt = \int_a^b\sqrt{(x'(t))^2+(y'(t))^2}dt.
+\end{equation*}
+</div>If \(\vec{r}(t)=(x(t),y(t),z(t))\) is a smooth parametrization that does not cover multiple times any arc a curve \(C \subset \mathbb{R}^3\text{,}\) then:<div class="displaymath">
+\begin{equation*}
+L = \int_a^b\|\vec{r}'(t)\|dt = \int_a^b\sqrt{(x'(t))^2+(y'(t))^2+(z'(t))^2}dt.
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-8"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-8"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-8"><article class="exercise exercise-like"><p id="p-62">Using the definition of length, find an expression for the length of the graph of a function \(y=f(x)\text{,}\) with \(a\leq x \leq b\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">The graph of a function has a natural parametrization, namely \(\vec{r}(t)=(t,f(t))\text{,}\) with \(a\leq t \leq b\text{.}\) Let us calculate the length using this parametrization. To that we calculate \(\vec{r}'(t)=(1,f'(t))\text{,}\) so that the length is<div class="displaymath">
+\begin{equation*}
+L = \int_b^a \sqrt{1 +(f'(t))^2} dt,
+\end{equation*}
+</div>which agrees with length calculated in single variable calculus.</div></div></article></div>
+<p id="p-63">The following code calculates the length of the curve numerically (using scipy) \(C\subset \mathbb{R}^3\) parametrized by \(r(t)\text{,}\) with \(t \in [a,b]\text{.}\)</p>
+<div class="sagecell-sage" id="sage-11"><script type="text/x-sage">import numpy as np
+from scipy import integrate
+from scipy.misc import derivative
+
+#Integration interval
+a=1
+b=5
+
+#Component Functions
+x=lambda t: np.sin(t)
+y=lambda t: np.cos(t)
+z=lambda t: t
+
+#Length element
+
+dxyz2=lambda t: np.sqrt(derivative(x,t,0.0000001)^2+derivative(y,t,0.0000001)^2+derivative(z,t,0.0000001)^2)
+
+# Approx. Values
+L=integrate.quad(dxyz2, a, b)
+print('L~',L[0])
+</script></div>
+<article class="exercise exercise-like" id="exercise-9"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-9"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-9"><article class="exercise exercise-like"><p id="p-64">To each of the vector functions, calculate \(\vec{r}'\text{,}\) \(\|\vec{r}'\|\) and the length \(L\) of the curve defined by the vector function. Do not forget to check if the parametrization is covering arcs of the curve multiple times (plotting the curves and changing the domain might help). Then check your solutions with the code above</p>
+<ol class="lower-alpha">
+<li id="li-22"><p id="p-derived-li-22">\(\vec{r}(t) = (t, \cosh(t)), \,\,\, t \in [-1,1] \text{;}\) (hint: \(cosh^2(t) - sinh^2(t) = 1\))</p></li>
+<li id="li-23"><p id="p-derived-li-23">\(\vec{r}(t) = (\cos(t), \sin(t), 3\sin(t)), \,\,\, t \in [0,4\pi] \text{;}\)</p></li>
+<li id="li-24"><p id="p-derived-li-24">\(\vec{r}(t) = (t^2, t^3), \,\,\, t \in [-2,2] \text{;}\)</p></li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-25"><p id="p-derived-li-25">\(\vec{r}'(t) = (1, \sinh(t))\text{,}\) \(\|\vec{r}'\|= \sqrt{1 + \sinh^2(t)} = \sqrt{\cosh^2(t)}= |\cosh(t)| = \cosh(t)\) and<div class="displaymath">
+\begin{equation*}
+L = \int_{-1}^1 \cosh(t) dt = \sinh(t)|_{-1}^1 = \sinh(1) - \sinh(-1) = 2\sinh(1) \approx 2.35
+\end{equation*}
+</div></p></li>
+<li id="li-26"><p id="p-derived-li-26">\(\vec{r}'(t) = (-\sin(t), \cos(t), 3\cos(t))\text{,}\) \(\|\vec{r}'\|= \sqrt{(-\sin(t))^2 + (\cos(t))^2+ (3\cos(t))^2} = \sqrt{1+9\cos^2(t)}\) and<div class="displaymath">
+\begin{equation*}
+L = \int_{0}^{2\pi} \sqrt{1+9\cos^2(t)} dt \approx 13.97
+\end{equation*}
+</div></p></li>
+<li id="li-27"><p id="p-derived-li-27">\(\vec{r}'(t) = (2t, 3t^2)\text{,}\) \(\|\vec{r}'\|= \sqrt{4t^2 + 9t^4} = |t|\sqrt{4+9t^2}\) and<div class="displaymath">
+\begin{align*}
+L =\amp \int_{-2}^2 \|\vec{r}'\| dt = \int_{-2}^0 -t\sqrt{4+9t^2} dt + \int_{0}^2 t\sqrt{4+9t^2} dt\\
+\amp + \frac{-1}{18}\int_{40}^4 \sqrt{u} dt + \frac{1}{18}\int_{4}^{40} \sqrt{u} dt\\
+\amp = \frac{-1}{18}\int_{40}^4 \sqrt{u} dt + \frac{1}{18}\int_{4}^{40} \sqrt{u} dt = \frac{-1}{27} u^{3/2}|_{40}^4 + \frac{1}{27} u^{3/2}|_{4}^{40} \approx 9.07
+\end{align*}
+</div></p></li>
+</ol></div></div></article></div>
+<article class="exercise exercise-like" id="exercise-10"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-10"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-10"><article class="exercise exercise-like"><p id="p-65">Change the parameter in the vector of functions of the last exercise by doing \(t=s^3\) and changing the domains to \([\sqrt[3]{a},\sqrt[3]{b}]\text{.}\) Then verify, with the code, that the lengths obtained by using the new parametrizations \(\vec{l}(s)=\vec{r}(s^3)\) are the same as the ones obtained before.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">Replace the appropriate functions in the code (see video solution).</div></div></article></div>
+<p id="p-66">If we have a trajectory given by some smooth vector function \(\vec{r}(t)\text{,}\) we might be interested into calculating the distance traveled from a starting time \(t_0\) (often 0) until time \(t\text{.}\) Letting \(t\) vary, we obtain the <em class="alert">arc length function</em>:</p>
+<div class="displaymath">
+\begin{equation*}
+L(t)=\int_{t_0}^t \|\vec{r}'(u)\|du.
+\end{equation*}
+</div>
+<p id="p-67">The following code writes an expression for the arc length function.</p>
+<div class="sagecell-sage" id="sage-12"><script type="text/x-sage">import sympy as sym #for symbolic calculations
+
+t = sym.Symbol('t')
+
+# Initial instant 
+t0=0
+
+#Component Functions
+x=sym.sin(t)^2
+y=sym.cos(t)^2
+z=t^3
+
+#Derivatives
+Dx=sym.diff(x, t)
+Dy=sym.diff(y, t)
+Dz=sym.diff(z, t)
+
+#Length Element
+LenEl=(Dx)^2+(Dy)^2+(Dz)^2
+
+# A primitive for the length
+L=sym.integrate(LenEl, t)
+
+# Arc Length Function
+print('L(t)=',L-L.evalf(subs={t: t0}))
+</script></div>
+<p id="p-68">Given a parametrization \(\vec{r}(t)\) of a spacial curve, \(C\text{,}\) we might use the arc length function in order to obtain a special parametrization of \(C\text{,}\) called parametrization by arc length, witch we shall denote by \(\vec{r}_0(s)\text{,}\) such that the tangent vector has always length 1: \(\|\vec{r}'_0(s)\| = 1\text{.}\) This parametrization is found by making \(s=L(t)\) and replacing \(t=L^{-1}(s)\) in \(\vec{r}(t)\text{,}\) so that \(\vec{r}_0(s)=\vec{r}(L^{-1}(s))\text{.}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 3 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn">We can calculate that \(\vec{r}_0(s)\) has the desired property, \(\|\vec{r}'_0(s)\|^2=1\text{,}\) using the chain rule and the inverse function theorem in \((L^{-1}(s))'=1/L'(t) = \|\vec{r}'(t)\|.\)</div></div>
+<article class="example example-like" id="example-4"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-4"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-69">Let \(\vec{r}(t)=\cos t\vec{i}+\sin t\vec{j}+3t\vec{k}\text{,}\) be a parametrization of a helix, defined in \([0,\infty)\text{.}\) Then the derivative of \(\vec{r}(t)\)  is:</p>
+<div class="displaymath">
+\begin{equation*}
+\vec{r'}(t)=-\sin t\vec{i}+\cos t\vec{j}+3\vec{k},
+\end{equation*}
+</div>
+<p class="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec{r'}(t)\|^2=(\sin t)^2+(\cos t)^2+9=10
+\end{equation*}
+</div>
+<p class="continuation">and the arc length function is</p>
+<div class="displaymath">
+\begin{equation*}
+L(t)=\int_0^t \|\vec{r}'(u)\|du = \int_0^t \sqrt{10} du =\sqrt{10} t. 
+\end{equation*}
+</div>
+<p class="continuation">Doing \(s=L(t)=\sqrt{10} t\text{,}\) we isolate \(t\) in terms of \(s\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+t=\frac{s}{\sqrt{10}}.
+\end{equation*}
+</div>
+<p class="continuation">So the arc length parametrization of this helix is</p>
+<div class="displaymath">
+\begin{align*}
+\vec{r}_0(s) =\amp  \vec{r}(t) =  \vec{r}\left(\frac{s}{\sqrt{10}}\right) \\
+=\amp \cos \left(\frac{s}{\sqrt{10}}\right)\vec{i}+\sin \left(\frac{s}{\sqrt{10}}\right)\vec{j}+\left(\frac{3s}{\sqrt{10}}\right)\vec{k}.
+\end{align*}
+</div></article></div>
+<article class="remark remark-like" id="remark-13"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.9</span><span class="period">.</span>
+</h6>The arc length parametrization of a curve is particularly important to study the geometry of the curve, then the scalar speed of the curve is constant (and we do not risk mixing trajectory properties with the geometrical ones). However, it might be hard to calculate the inverse of \(L(t)\) explicitly and even computer methods might find difficult to find an expression. So we might prefer to do this numerically, as done in the next code:</article><div class="sagecell-sage" id="sage-13"><script type="text/x-sage">import numpy as np #for numerical calculations
+
+
+# Initial instant and End Instant
+t0=0
+tw=4
+
+# number of points in the interval
+n=150
+
+#linearising the space
+t=np.linspace(t0,tw,n)
+
+DeltaT=(tw-t0)/n
+
+#Component Functions
+
+def xfun(t):
+	return np.sin(t^1.5)
+def yfun(t):
+	return np.cos(t^1.5)
+def zfun(t):
+	return t
+	
+x= xfun(t)
+y= yfun(t)
+z= zfun(t)
+
+#Derivatives
+
+Dx =np.diff(x,1)/(DeltaT)
+Dy =np.diff(y,1)/(DeltaT)
+Dz =np.diff(z,1)/(DeltaT)
+
+
+#Length Element
+
+LenEl=np.zeros(n)
+for i in range(n-1):
+    LenEl[i]=np.sqrt((Dx[i])^2+(Dy[i])^2+(Dz[i])^2)
+
+# Arc Length Function
+L=np.zeros(n)
+for i in range(1,n):
+    L[i]=L[i-1]+LenEl[i]*DeltaT
+
+# New variable    
+s = np.linspace(0,L[n-1],n)
+
+# Inverting L
+
+ts=np.zeros(n)
+for i in range(1,n):
+    val = (L-s[i])^2
+    min_index = min(range(len(val)), key=val.__getitem__)
+    if val[min_index-1]>val[min_index+1]:
+        ts[i]=val[min_index-1]/(val[min_index]+val[min_index-1])*t[min_index-1]+val[min_index]/(val[min_index]+val[min_index-1])*t[min_index]
+    else:
+        ts[i]=val[min_index+1]/(val[min_index]+val[min_index+1])*t[min_index+1]+val[min_index]/(val[min_index]+val[min_index+1])*t[min_index]
+
+
+# Component Functions with new parametrization
+xs= xfun(ts)
+ys= yfun(ts)
+zs= zfun(ts)
+</script></div>
+<p id="p-70">The following code can be use to animate trajectories defined by some parametrizations (by arc length or not):</p>
+<div class="sagecell-sage" id="sage-14"><script type="text/x-sage">#Adapted from some code of shad0w_wa1k3r
+
+import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d.axes3d as p3
+import matplotlib.animation as animation
+
+###############################################################################
+# Create trajectory:
+def make_trajectory(n):
+    trajectory = np.vstack((x, y, z))  #original parametrization
+    #trajectory = np.vstack((xs, ys, zs)) #arc length parametrization
+    return trajectory
+
+# Update AUV position for plotting:
+def update_auv(num, dataLines, lines) :
+    for line, data in zip(lines, dataLines) :
+        line.set_data(data[0:2, num-1:num])
+        line.set_3d_properties(data[2,num-1:num])
+    return lines
+
+# Update trajectory for plotting:
+def update_trj(num, dataLines, lines) :
+    for line, data in zip(lines, dataLines) :
+        line.set_data(data[0:2, :num])
+        line.set_3d_properties(data[2,:num])
+    return lines
+###############################################################################
+
+# Attach 3D axis to the figure
+fig = plt.figure()
+ax = p3.Axes3D(fig)
+
+# Create trajectory:
+data = [make_trajectory(n)]
+
+# Create line objects:
+auv = [ax.plot(data[0][0,0:1], data[0][1,0:1], data[0][2,0:1], 'ro')[0]]
+trj = [ax.plot(data[0][0,0:1], data[0][1,0:1], data[0][2,0:1])[0]]
+
+# Set the axes properties
+ax.set_xlim3d([np.min(x), np.max(x)])
+ax.set_xlabel('X')
+
+ax.set_ylim3d([np.min(y), np.max(y)])
+ax.set_ylabel('Y')
+
+ax.set_zlim3d(np.min(z), np.max(z))
+ax.set_zlabel('Z')
+
+ax.set_title('3D Test')
+
+# Creating the Animation object
+ani_auv = animation.FuncAnimation(fig, update_auv, n, fargs=(data, auv),
+                              interval=50, blit=False) #repeat=False, 
+ani_trj = animation.FuncAnimation(fig, update_trj, n, fargs=(data, trj),
+                              interval=50, blit=False) #repeat=False, 
+#ani_auv.save('ani1.mp4') #just a point
+ani_trj.save('ani2.mp4') #the whole curve
+</script></div>
+<article class="exercise exercise-like" id="exercise-11"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-11"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like"><p id="p-71">For each of the vector functions below use the codes above to animate the defined trajectories:</p>
+<ol class="lower-alpha">
+<li id="li-28"><p id="p-derived-li-28">\(\vec{r}(t) = (\ln(t), \cos(t),0),  \,\,\,\,\, t \in [1,10]\text{;}\)</p></li>
+<li id="li-29"><p id="p-derived-li-29">\(\vec{r}(t) = (\cos(2t), sin(t), 3t),  \,\,\,\,\, t \in [0,10]\text{;}\)</p></li>
+<li id="li-30"><p id="p-derived-li-30">\(\displaystyle \vec{r}(t) = (t, t^2, t^3/3),  \,\,\,\,\, t \in [0,3]\)</p></li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">Replace the appropriate functions in the code (see video solution).</div></div></article></div>
+<p id="p-72">A notion of how much a curve \(C\) defined by some smooth vector function \(r:[a,b] \to \mathbb{R}^3\)is bending is important, then  it can indicate points of higher deformation and how tight a curve is in a road. Such a notion is called curvature in math and it is defined as second derivative of the arc length parametrization of \(C\text{:}\) \(||\vec{r}_0''(s)||\text{.}\) We use the arc length parametrization<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 4 </sup></a> because the second derivative corresponds to the acceleration. The expression \(k=||\vec{r}_0''(s)||\) is prone to numerical error, and the formula</p>
+<div class="displaymath">
+\begin{equation*}
+k=\frac{\sqrt{(z''y'-y''z')^2+(x''z'-z''x')^2+(y''x'-x''y')^2}}{(x'^2+y'^2+z'^2)^{3/2}}
+\end{equation*}
+</div>
+<p class="continuation">is better suited (although its proof is beyond the scope of this material). The following code calculates the curvature and plots it against the parameter \(t\text{:}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn">That has constant scalar speed.</div></div>
+<div class="sagecell-sage" id="sage-15"><script type="text/x-sage">import matplotlib.pyplot as plt
+import numpy as np
+
+
+# Initial instant and End Instant
+t0=-4
+tw=4
+
+# number of points in the interval
+n=1000
+
+#linearising the space
+t=np.linspace(t0,tw,n)
+
+DeltaT=(tw-t0)/n
+
+#Component Functions
+
+def xfun(t):
+	return np.cos(t)
+def yfun(t):
+	return np.sin(t)
+def zfun(t):
+	return t
+	
+x= xfun(t)
+y= yfun(t)
+z= zfun(t)
+
+# First Order Derivatives
+
+Dx =np.diff(x,1)/(DeltaT)
+Dy =np.diff(y,1)/(DeltaT)
+Dz =np.diff(z,1)/(DeltaT)
+Dx=np.delete(Dx,n-2)
+Dy=np.delete(Dy,n-2)
+Dz=np.delete(Dz,n-2)
+
+# Second Order Derivatives
+
+Dxx =np.diff(x,2)/(DeltaT)^2
+Dyy =np.diff(y,2)/(DeltaT)^2
+Dzz =np.diff(z,2)/(DeltaT)^2
+
+    
+# Curvature
+k= np.sqrt((Dzz*Dy-Dyy*Dz)^2+(Dxx*Dz-Dzz*Dx)^2+(Dyy*Dx-Dxx*Dy)^2)/(Dx^2+Dy^2+Dz^2)^1.5
+
+# Plot of the curvature
+t=np.delete(t,n-1)
+t=np.delete(t,n-2)
+plt.plot(t, k)
+plt.xlim(t0,tw)
+plt.ylim(np.min(k)-1,np.max(k)+1)
+plt.show()
+</script></div>
+<article class="exercise exercise-like" id="exercise-12"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-12"><h6 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-12"><article class="exercise exercise-like"><p id="p-73">For each of the vector functions below use the code above to determine approximately (by the graph) points of maxima and minima for the curvature of the curves defined by the vector functions:</p>
+<ol class="lower-alpha">
+<li id="li-31"><p id="p-derived-li-31">\(\vec{r}(t) = (\ln(t), \cos(t),0),  \,\,\,\,\, t \in [1,10]\text{;}\)</p></li>
+<li id="li-32"><p id="p-derived-li-32">\(\vec{r}(t) = (\cos(2t), sin(t), 3t),  \,\,\,\,\, t \in [0,10]\text{;}\)</p></li>
+<li id="li-33"><p id="p-derived-li-33">\(\displaystyle \vec{r}(t) = (t, t^2, t^3/3),  \,\,\,\,\, t \in [0,3]\)</p></li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<p id="p-74">a)</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_1.png" class="contained" alt=""></div> We find points of maxima for the curvature at \(\pi, 2\pi, 3\pi\text{.}\) That correspond to the three high bending points in the plot: <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_1_plot.png" class="contained" alt=""></div>
+<p id="p-75">b)</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_2.png" class="contained" alt=""></div> We find points two different types of local maxima: the lower ones at  \(0, \pi, 2\pi, 3\pi\text{,}\) that correspond to the bends "in the middle" of the plot, and higher ones at \(\pi/2, 3\pi/2, 5\pi/2, 7\pi/2\text{,}\) that correspond to the bends "in the corners" of the plot. The minima show the flatter parts, in between consecutive local maxima: <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_2_plot.png" class="contained" alt=""></div>
+<p id="p-76">c)</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_3.png" class="contained" alt=""></div> We find a point of maxima at \(0\text{,}\) with curvature 2, and the curvature seems to tend to 0 as \(t\) increases: <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/Ex_curvature_3_plot.png" class="contained" alt=""></div>
+</div></div></article></div></section></div></main>
+</div>
+</body>
+</html>
